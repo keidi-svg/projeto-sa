@@ -1,5 +1,5 @@
 import { ocorrenciaConstants } from '../_constants';
-import { ocorrenciaService } from '../_services';
+import { ocorrenciaService } from '../_services/ocorrencia.service';
 import { alertActions } from '.';
 import { history } from '../_helpers';
 

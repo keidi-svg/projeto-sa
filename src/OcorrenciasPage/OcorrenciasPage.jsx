@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ocorrenciaActions } from '../_actions';
+import { ocorrenciaActions } from '../_actions/ocorrencia.actions.js';
 
 class OcorrenciasPage extends React.Component {
     componentDidMount() {
