@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ocorrenciaActions } from '../_actions/ocorrencia.actions.js';
+import Layout from '../_components/Layout/Layout.jsx';
+import './OcorrenciasPage.css'; // Importar o CSS da página de ocorrências
 
 class OcorrenciasPage extends React.Component {
     componentDidMount() {
@@ -20,25 +22,27 @@ class OcorrenciasPage extends React.Component {
         const { ocorrencias } = this.props;
 
         return (
-            <div className="ocorrencias-page">
-                <h2>Ocorrências</h2>
-                <button onClick={() => this.props.history.push('/ocorrencias/add')}>Adicionar Ocorrência</button>
-                <div className="ocorrencias-list">
-                    {ocorrencias && ocorrencias.length > 0 ? (
-                        ocorrencias.map(ocorrencia => (
-                            <div key={ocorrencia.id} className="ocorrencia-card">
-                                <h3>{ocorrencia.tipo}</h3>
-                                <p>{ocorrencia.descricao}</p>
-                                <p>{ocorrencia.data}</p>
-                                <button onClick={() => this.handleEdit(ocorrencia)}>Editar</button>
-                                <button onClick={() => this.handleDelete(ocorrencia.id)}>Excluir</button>
-                            </div>
-                        ))
-                    ) : (
-                        <div>Nenhuma ocorrência encontrada.</div>
-                    )}
+            <Layout>
+                <div className="ocorrencias-page">
+                    <h2>Ocorrências</h2>
+                    <button onClick={() => this.props.history.push('/ocorrencias/add')}>Adicionar Ocorrência</button>
+                    <div className="ocorrencias-list">
+                        {ocorrencias && ocorrencias.length > 0 ? (
+                            ocorrencias.map(ocorrencia => (
+                                <div key={ocorrencia.id} className="ocorrencia-card">
+                                    <h3>{ocorrencia.tipo}</h3>
+                                    <p>{ocorrencia.descricao}</p>
+                                    <p>{ocorrencia.data}</p>
+                                    <button onClick={() => this.handleEdit(ocorrencia)}>Editar</button>
+                                    <button onClick={() => this.handleDelete(ocorrencia.id)}>Excluir</button>
+                                </div>
+                            ))
+                        ) : (
+                            <div>Nenhuma ocorrência encontrada.</div>
+                        )}
+                    </div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 }

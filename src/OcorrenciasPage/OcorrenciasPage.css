@@ -1,0 +1,60 @@
+/* OcorrenciasPage.css */
+.ocorrencias-page {
+    padding: 20px;
+}
+
+.ocorrencias-page h2 {
+    margin: 20px 0; /* Adicione margem superior para distanciar do menu */
+    font-size: 24px;
+}
+
+.ocorrencias-page button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.ocorrencias-page button:hover {
+    background-color: #0056b3;
+}
+
+.ocorrencias-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ocorrencia-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ocorrencia-card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ocorrencia-card p {
+    margin: 5px 0;
+}
+
+.ocorrencia-card button {
+    margin-right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ocorrencia-card button:hover {
+    background-color: #c82333;
+}

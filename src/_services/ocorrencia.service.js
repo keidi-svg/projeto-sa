@@ -1,7 +1,10 @@
 import { authHeader } from '../_helpers';
 
 export const ocorrenciaService = {
+    create,
     getAll,
+    getById,
+    update,
     delete: _delete
 };
 
@@ -22,6 +25,24 @@ function _delete(id) {
 
     return fetch(`/ocorrencias/${id}`, requestOptions).then(handleResponse);
 }
+function getById(id) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(`/ocorrencias/${id}`, requestOptions).then(handleResponse);
+}
+
+function update(id, ocorrencia) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: authHeader(),
+        body: JSON.stringify(ocorrencia)
+    };
+
+    return fetch(`/ocorrencias/${id}`, requestOptions).then(handleResponse);
+}
 
 function handleResponse(response) {
     if (!response.ok) {
@@ -29,4 +50,14 @@ function handleResponse(response) {
     }
 
     return response.json();
+}
+
+function create(ocorrencia) {
+    const requestOptions = {
+        method: 'POST',
+        headers: authHeader(),
+        body: JSON.stringify(ocorrencia)
+    };
+
+    return fetch(`/ocorrencias`, requestOptions).then(handleResponse);
 }

@@ -1,4 +1,4 @@
-/* Sidebar.css */
+/* SideBar.css */
 .sidebar {
     position: fixed;
     top: 0;
@@ -8,19 +8,19 @@
     background-color: #333;
     color: white;
     overflow-x: hidden;
+    transform: translateX(-250px); /* Sidebar oculta quando fechada */
     transition: transform 0.3s ease;
-    transform: translateX(-100%);
     z-index: 1000; /* Garante que a sidebar fique acima do conteúdo principal */
 }
 
 .sidebar.open {
-    transform: translateX(0);
+    transform: translateX(0); /* Sidebar visível quando a classe 'open' é adicionada */
 }
 
 .sidebar-toggle {
     position: absolute;
     top: 20px;
-    right: -60px;
+    left: 0; /* Ajuste o ícone para a posição correta dentro da sidebar */
     width: 60px;
     height: 40px;
     background-color: #333;
@@ -28,6 +28,7 @@
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 1001; /* Garante que o botão fique acima da sidebar */
 }
 
 .sidebar-menu {

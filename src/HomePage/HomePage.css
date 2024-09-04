@@ -1,18 +1,23 @@
 /* HomePage.css */
 .homepage-container {
     display: flex;
-    height: 100vh; /* Garantir que o contêiner ocupe toda a altura da tela */
+    height: 100vh;
 }
 
 .main-content {
-    margin-left: 250px; /* Ajuste conforme a largura da sidebar */
     flex: 1;
+    margin-left: 0; /* Inicialmente sem margem */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.open ~ .main-content {
+    margin-left: 250px; /* Ajuste quando a sidebar estiver aberta */
 }
 
 header {

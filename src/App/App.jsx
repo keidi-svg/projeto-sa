@@ -9,6 +9,12 @@ import { HomePage } from '../HomePage';
 import { OcorrenciasPage } from '../OcorrenciasPage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+import { AddOcorrenciaPage } from '../AddOcorrenciaPage/AddOcorrenciaPage';
+import { EditOcorrenciaPage } from '../EditOcorrenciaPage/EditOcorrenciaPage';
+
+// Dentro da definição das rotas
+
+
 
 class App extends React.Component {
     constructor(props) {
@@ -35,6 +41,8 @@ class App extends React.Component {
                                 <PrivateRoute path="/ocorrencias" component={OcorrenciasPage} /> 
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
+                                <Route path="/ocorrencias/add" component={AddOcorrenciaPage} />
+                                <Route path="/ocorrencias/edit/:id" component={EditOcorrenciaPage} />
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
