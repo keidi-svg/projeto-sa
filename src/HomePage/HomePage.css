@@ -1,0 +1,60 @@
+/* HomePage.css */
+.homepage-container {
+    display: flex;
+    height: 100vh; /* Garantir que o contêiner ocupe toda a altura da tela */
+}
+
+.main-content {
+    margin-left: 250px; /* Ajuste conforme a largura da sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    height: 100px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ccc;
+}
+
+.footer-icon {
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}

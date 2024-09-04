@@ -8,31 +8,37 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.jsx?$/, // Para arquivos .js e .jsx
                 loader: 'babel-loader'
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,  // Adiciona suporte a arquivos de imagem
+                test: /\.css$/, // Para arquivos .css
+                use: ['style-loader', 'css-loader'] // Loaders para processar CSS
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,  // Para arquivos de imagem
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[hash].[ext]',  // Mantém o nome original e adiciona um hash para cache busting
-                            outputPath: 'assets/images',  // Salva as imagens na pasta 'assets/images'
+                            name: '[name].[hash].[ext]',  // Nome do arquivo com hash para evitar cache
+                            outputPath: 'assets/images',  // Caminho de saída para as imagens
                         },
                     },
                 ],
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './src/index.html'
-    })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ],
     devServer: {
         historyApiFallback: true
     },
     externals: {
-        // global app config object
+        // Configuração global para a API
         config: JSON.stringify({
             apiUrl: 'http://localhost:4000'
         })
