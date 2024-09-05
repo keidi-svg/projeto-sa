@@ -11,10 +11,11 @@ import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { AddOcorrenciaPage } from '../AddOcorrenciaPage/AddOcorrenciaPage';
 import { EditOcorrenciaPage } from '../EditOcorrenciaPage/EditOcorrenciaPage';
+import { DadosPessoaisPage } from '../DadosPessoaisPage/DadosPessoaisPage';
+import { NotificacoesPage } from '../NotificacoesPage/NotificacoesPage';
+import ContatoPage from '../ContatoPage/ContatoPage.jsx';
 
 // Dentro da definição das rotas
-
-
 
 class App extends React.Component {
     constructor(props) {
@@ -39,10 +40,13 @@ class App extends React.Component {
                             <Switch>
                                 <PrivateRoute exact path="/" component={HomePage} />
                                 <PrivateRoute path="/ocorrencias" component={OcorrenciasPage} /> 
+                                <PrivateRoute path="/dados-pessoais" component={DadosPessoaisPage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
-                                <Route path="/ocorrencias/add" component={AddOcorrenciaPage} />
-                                <Route path="/ocorrencias/edit/:id" component={EditOcorrenciaPage} />
+                                <PrivateRoute path="/ocorrencias/add" component={AddOcorrenciaPage} />
+                                <PrivateRoute path="/notificacoes" component={NotificacoesPage} />
+                                <PrivateRoute path="/ocorrencias/edit/:id" component={EditOcorrenciaPage} />
+                                <PrivateRoute path="/fale-conosco" component={ContatoPage} />
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
