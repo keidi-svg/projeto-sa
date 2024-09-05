@@ -1,0 +1,101 @@
+
+  .news-section {
+    background-color: white;
+    width: 80%; /* Aumenta a largura para cobrir mais espaço */
+    max-width: 1200px; /* Limita o máximo de largura */
+    height: 90%; /* Define uma altura grande para cobrir a maior parte da tela */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+  }
+  
+  .news {
+    flex-grow: 1; /* Faz essa parte crescer para preencher o espaço vertical */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
+  }
+  
+  .news-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  
+  .date {
+    background-color: #e6e6e6;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 10px;
+    min-width: 70px;
+  }
+  
+  .date span {
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .date small {
+    color: #777;
+  }
+  
+  .content h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+  
+  .content p {
+    font-size: 1.1em;
+    color: #555;
+  }
+  
+  .ver-mais {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .event-promo {
+    background-color: #00b3b3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+  }
+  
+  .event-promo h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .event-promo p {
+    margin: 6px 0;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .news-section {
+      width: 95%;
+      height: auto;
+    }
+  
+    .news-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .date {
+      margin-bottom: 10px;
+    }
+  }

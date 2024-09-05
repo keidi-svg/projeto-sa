@@ -14,6 +14,9 @@ import { EditOcorrenciaPage } from '../EditOcorrenciaPage/EditOcorrenciaPage';
 import { DadosPessoaisPage } from '../DadosPessoaisPage/DadosPessoaisPage';
 import { NotificacoesPage } from '../NotificacoesPage/NotificacoesPage';
 import ContatoPage from '../ContatoPage/ContatoPage.jsx';
+import NoticiasPage from '../NoticiasPage/NoticiasPage.jsx';
+import AddNoticiasPage from '../AddNoticiasPage/AddNoticiasPage.jsx';
+import EditNoticiasPage from '../EditNoticiasPage/EditNoticiasPage.jsx';
 
 // Dentro da definição das rotas
 
@@ -47,6 +50,9 @@ class App extends React.Component {
                                 <PrivateRoute path="/notificacoes" component={NotificacoesPage} />
                                 <PrivateRoute path="/ocorrencias/edit/:id" component={EditOcorrenciaPage} />
                                 <PrivateRoute path="/fale-conosco" component={ContatoPage} />
+                                <PrivateRoute path="/noticias" component={NoticiasPage} />
+                                <PrivateRoute path="/noticias/add" component={AddNoticiasPage} />
+                                <PrivateRoute path="/noticias/edit/:id" component={EditNoticiasPage} />
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
