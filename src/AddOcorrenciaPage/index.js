@@ -1,1 +1,1 @@
-export * from './EditOcorrenciaPage';
+export * from './AddOcorrenciaPage';
